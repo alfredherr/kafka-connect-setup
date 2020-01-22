@@ -110,7 +110,9 @@ curl -i -X POST \
 
  * https://docs.confluent.io/current/connect/references/restapi.html
 
+```bash
 curl -i -X GET -H "Accept:application/json" -H  "Content-Type:application/json"  http://localhost:18083/connectors/
+```
 
 ## Other
 
