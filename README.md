@@ -80,7 +80,7 @@ curl -i -X POST \
 curl -i -X POST \
     -H "Accept:application/json" \
     -H  "Content-Type:application/json" \
-    http://localhost:18083/connectors/ -d '
+    http://localhost:8083/connectors/ -d '
 {
    "name":"jdbc-sink",
    "config":{
@@ -111,7 +111,7 @@ curl -i -X POST \
  * https://docs.confluent.io/current/connect/references/restapi.html
 
 ```bash
-curl -i -X GET -H "Accept:application/json" -H  "Content-Type:application/json"  http://localhost:18083/connectors/
+curl -i -X GET -H "Accept:application/json" -H  "Content-Type:application/json"  http://localhost:8083/connectors/
 ```
 
 ## Other
