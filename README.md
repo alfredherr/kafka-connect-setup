@@ -22,23 +22,30 @@ docker-compose up
 
 ### Listing topics: 
 
+```bash
 kafka-topics --list --bootstrap-server localhost:9092
+```
 
 ### Consuming (avro): 
 
+```bash
 kafka-avro-console-consumer --topic asgard.public.customers  \
   --bootstrap-server localhost:9092 \
   --property schema.registry.url=http://localhost:8081 \
   --property print.key=true \
   --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer \
   --from-beginning
+```
 
 ### Listing schemas: 
 
- - curl -s http://localhost:8081/subjects/
+```bash
+curl -s http://localhost:8081/subjects/
+```
 
 ## Registering Source Connector
 
+```bash
 curl -i -X POST \
     -H "Accept:application/json" \
     -H  "Content-Type:application/json" \
@@ -65,9 +72,11 @@ curl -i -X POST \
             "transforms.InsertSourceDetails.static.value":"Debezium CDC from Postgres on asgard"
         }
     }'
+```
 
 ## Registering Sink Connector
 
+```bash
 curl -i -X POST \
     -H "Accept:application/json" \
     -H  "Content-Type:application/json" \
@@ -95,6 +104,7 @@ curl -i -X POST \
         "value.converter.schema.registry.url": "http://schema-registry:8081"
    }
 }'
+```
 
 ### Checking connector status
 
